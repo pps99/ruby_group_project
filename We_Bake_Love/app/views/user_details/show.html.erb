@@ -1,0 +1,42 @@
+<br>
+<br>
+<%= link_to "Back", user_details_path %>
+<h1>Order Details</h1>
+
+<table>
+    <thead>
+    <td colspan="3">Name: <%= @user_detail.user.name %></td>
+  </thead>
+   <thead>
+    <td colspan="3">Address: <%= @user_detail.address %></td>
+  </thead>
+  <thead>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </thead>
+  <% @grand_total = 0 %>
+  <% @user_details.each do |user_detail| %>
+    <tr>
+      <td><%= user_detail.cake_name %></td>
+      <td><%= user_detail.quantity %></td>
+      <td><%= user_detail.price %></td>
+      <% @grand_total = @grand_total + user_detail.price%>
+    </tr>
+    <% end %>
+  <tr>
+    <td colspan="2">Total</td>
+    <td><%= @grand_total %></td>
+  </tr>
+  <tr>
+  
+
+
+
+  <tr>
+    <td colspan="3">
+    <button><%= link_to "Accept", accept_path(@user_detail.id) %></button>
+    <button><%= link_to "Cancel", cancel_path(@user_detail.id) %></button>
+    </td>
+  </tr>
+</table>

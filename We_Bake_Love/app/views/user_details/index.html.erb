@@ -1,0 +1,29 @@
+<h1>Order Details List</h1>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Total</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>order_detailed_at</th>
+    <th>Operation</th>
+  </thead>
+  <% @user_details.each do |user_detail| %>
+  <tr>
+    <td><%= user_detail.id %></td>
+    <td><%= user_detail.user.name %></td>
+    <td><%= user_detail.status %></td>
+    <td><%= user_detail.total %></td>
+    <td><%= user_detail.phone %></td>
+    <td><%= user_detail.address %></td>
+    <td><%= user_detail.created_at %></td>
+    <td>  
+    <%= link_to "View", user_detail_path(user_detail) %>
+    <%#<%= link_to "Edit", edit_user_detail_path(user_detail) %>
+    </td>
+  </tr>
+  <% end %>
+</table>

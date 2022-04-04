@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "new_cake.css" %>
+<div class="newform">
+<%= form_for @cake do |f| %>
+<h2>Edit_Cake</h2>
+<div class="space">
+  <%= f.label :name , :class=>"name_space" %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="space">
+  <%= f.label :image , :class=>"image_space" %>
+  <%= f.file_field :image %>
+</div>
+
+<div class="space">
+  <%= f.label :description, :class=>"description_space" %>
+  <%= f.text_field :description %>
+</div>
+
+
+<div class="space">
+  <%= f.label :price,  :class=>"price_space" %>
+  <%= f.text_field :price %>
+</div>
+
+<div class="new_cake_button">
+  <%= f.submit %>
+</div>
+
+<% end %>
+</div>

@@ -1,0 +1,50 @@
+.newform {
+  width: 390px;
+
+  border-radius: 10px;
+  border: 1px solid #000000;
+  text-align: center;
+  margin: 10% auto 6% auto;
+}
+.space{
+  margin-bottom: 10px;
+
+}
+.name_space{
+ 
+  margin-right: 33px;
+}
+.image_space{
+  margin-left: 85px;
+  margin-right: 30px;
+}
+.description_space{
+  margin-right: 29px;
+  margin-left: -29px;
+}
+.price_space{
+  margin-right: 40px;
+}
+.new_cake_button{
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+.name_error,.image_error,.description_error,.price_error{
+  color: #ff0000;
+  font-size: 14px;
+  margin-left: 42px;
+}
+
+.description_error{
+  margin-left: 76px;
+}
+
+.file_import{
+  text-align: center;
+  width: 390px;
+  margin: 0% auto 0% auto;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  padding-bottom: 30px;
+}

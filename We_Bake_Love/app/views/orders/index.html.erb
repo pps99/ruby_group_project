@@ -1,0 +1,26 @@
+<h1>Order List</h1>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Ordered_at</th>
+    <th>Operation</th>
+  </thead>
+  <% @orders.each do |order| %>
+  <tr>
+    <td><%= order.id %></td>
+    <td><%= order.user.name %></td>
+    <td><%= order.status %></td>
+
+    <td><%= order.created_at %></td>
+    <td>  
+    <%= link_to "View", order_path(order) %>
+    <%= link_to "Edit", edit_order_path(order) %>
+    </td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,1 @@
+$("#notice").show().delay(5000).fadeOut();

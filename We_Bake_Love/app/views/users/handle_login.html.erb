@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag "login_page.css" %>
+
+<div class="form">
+  <%= fa_icon "user solid 3x", class:"user_icon" %>
+
+  <h2>Member_Login</h2>
+  <%= form_with url: handle_login_url, local: "true" do |form| %>
+    <div class="input">
+      <%= form.text_field :attr, name: "email", placeholder: "Enter your email" %>
+    </div>
+    <div class="input">
+      <%= form.password_field :attr, name: "password", placeholder: "Enter your password" %>
+    </div>
+    
+  <% flash.each do |type, msg| %>
+   <div class="err">
+    <%= msg %>
+     </div>
+     <% end %>
+
+      <%= form.submit :Login %>
+
+    <div class="clearfix">
+    <div class="create">
+    <%=link_to "Create", new_user_path %>
+    <%= fa_icon "user-plus" %>
+    </div>
+    <div class="forgot">
+    <%= link_to "Forgot your password", password_reset_path%>
+     <%= fa_icon "question" %>
+
+    </div>
+    </div>
+
+  <% end %>
+</div>

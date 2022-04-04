@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag "viewer.css" %>
+
+<% if current_user.nil? %>
+<div class="void">
+<%= link_to "Log_In", handle_login_path %>
+</div>
+<% else %>
+  <div id="dropdownwrapper">
+            <span id="dropdown-meanu" class="i-circle"><%= current_user.name[0].capitalize %></span>
+             <div id="appdropdown">
+                <div class="app-item">
+                  <h2>Name: &ensp; <%= current_user.name%></h2>
+                  <button><%= link_to "Edit Profile", edit_user_path(current_user.id)%></button>
+                  </br>
+                  <button><%= link_to "Log_Out", logout_path %></button>
+                </div>
+              
+            </div>
+        
+<% end %>
+
+

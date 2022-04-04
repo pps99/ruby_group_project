@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag "cart_show.css" %>
+<h1>My Carts</h1>
+<% @grand_total = 0 %>
+<% @cart_items.each do |cart_item| %>
+
+<%= image_tag cart_item.cake.image, style: "width: 100px", class: "card-img-top" %>
+<h3>Cake Name : <%= cart_item.cake.name %> </h3>
+<h5>Cake quantity : <%= cart_item.quantity%></h5>
+<h5>Total Amount : <%= cart_item.total %> </h5>
+
+<% @grand_total = @grand_total+cart_item.total%>
+<%= form_for cart_item, remote: true do |f| %>
+    <h5>Total quantity : </h5>
+    <%= f.hidden_field :cake_id, :value => cart_item.cake.id %>
+    <%= f.number_field :quantity, :value => cart_item.quantity.to_i %>
+     <%= f.submit "Update cart", :remote => true %>
+    <button class="decor_button"> <%= link_to "Delete", cart_item, method: :delete, data: { confirm: "Are you sure you want to delete this user?" }, class: "remove_post", :remote => true %></button>
+    <% end %>
+    <br/>
+<% end %>
+<br/>
+<h3>Your current card total price : <%= @grand_total %> </h3>
+<br/>
+
+<button class="decor_button">
+   <%= link_to "Back", root_path %>
+</button>
+<button  class="decor_button">
+   <%= link_to "Clear cart", cancel_cart_item_url %>
+</button>
+<button  class="decor_button">
+   <% if( @grand_total == 0) %>
+     <%= link_to "Order Now",root_path%>
+   <% else %>
+     <%= link_to "Order Now", new_user_detail_path(:total => @grand_total) %>
+   <%end%>
+</button>
+

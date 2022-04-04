@@ -1,0 +1,81 @@
+  <br>  
+  <br>  
+  <% flash.each do |type, msg| %>
+   <div id="notice">
+    <%= msg %>
+     </div>
+  <% end %>
+
+<%= stylesheet_link_tag "viewer.css" %>
+<div class="container">
+  <div class="text-cart">
+  <div id="card">
+  <%= render "carts/card" %>
+  </div><br>
+<% if current_user.nil? %>
+<button><%= link_to "Log_In", handle_login_path %></button>
+<% else %>
+  <div id="dropdownwrapper">
+            <span id="dropdown-meanu" class="i-circle"><%= current_user.name[0].capitalize %></span>
+             <div id="appdropdown">
+              <% if current_user.role == "admin" %>
+                <div class="app-item">
+                  <h2>Name: &ensp; <%= current_user.name %></h2>
+                  <button><%= link_to "Edit Profile", edit_user_path(current_user.id) %></button>
+                  </br>
+                   <button><%= link_to "Create_Cake", new_cake_path %></button>
+                  </br>
+                   <button><%= link_to "Edit_Cake", cakes_path %></button>
+                  </br>
+                  <button><%= link_to "Edit_User", users_path %></button>
+                  </br>
+                  <button><%= link_to "Order", user_details_path %></button>
+                  </br>
+                  <button><%= link_to "Log_Out", logout_path %></button>
+                </div>
+              <% else %>
+                  <div class="app-item">
+                  <h2>Name: &ensp; <%= current_user.name %></h2>
+                  <button><%= link_to "Edit Profile", edit_user_path(current_user.id) %></button>
+                  </br>
+                  <button><%= link_to "Log_Out", logout_path %></button>
+                  </div>
+              <% end %>
+              
+            </div>
+           </div>
+<% end %>
+</div>
+  
+
+<form class="d-flex" method="GET" action="/search">
+    <input type="search" class="form-control me-2"  placeholder="Search" aria-label="Search"  name="query" > 
+    <button type="submit" class="btn btn-outline-success">Search</button>
+</form>
+  <h2>Welcome to Cake Cafe.</h2>
+<hr>
+<% @cakes.each do |cake| %>
+
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <% if cake.image.attached? %>
+    <%= image_tag cake.image, style: "width: 100px", class: "card-img-top" %>
+    <% end %>
+    <h5 class="card-title">Name - <%= cake.name %></h5>
+    <p class="card-text">Description - <%= cake.description %></p>
+    <p class="card-text">Price - <%= cake.price %> $ </p>
+    <%= form_for CartItem.new, remote: true do |f| %>
+    <%= f.hidden_field :cake_id, :value => cake.id %>
+    <%= f.number_field :quantity, :value => 1, :min => 1 %>
+    <%= f.hidden_field :cake_name, :value => cake.name %>
+    <%= f.submit "Add to cart" %>
+    <% end %>
+
+  </div>
+</div>
+<br>
+
+<% end %>
+
+  

@@ -1,0 +1,28 @@
+.editform {
+  width: 390px;
+
+  border-radius: 10px;
+  border: 1px solid #000000;
+  text-align: center;
+  margin: 10% auto 10% auto;
+}
+.newform svg{
+  margin-top: 15px;
+}
+
+.name_space{
+ 
+  margin-right: 87px;
+}
+.password_space{
+  margin-right: 10px;
+}
+.space{
+  margin-bottom: 10px;
+
+}
+.new_user_button{
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}

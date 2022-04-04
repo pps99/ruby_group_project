@@ -1,0 +1,33 @@
+<%= link_to "Back", orders_path %>
+<h1>Order Details</h1>
+
+<table>
+  <thead>
+    <td colspan="3">Order ID: <%= @order.id %></td>
+  </thead>
+  <thead>
+    <td colspan="3">Name: <%= @order.user.name %></td>
+  </thead>
+  <thead>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </thead>
+  <% @order.order_details.each do |order_detail| %>
+  <tr>
+    <td><%= Cake.find(order_detail.cake_id).name %></td>
+    <td><%= order_detail.quantity %></td>
+    <td><%= Cake.find(order_detail.cake_id).price %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td colspan="2">Total</td>
+    <td><%= @order.total %></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+    <button><%= link_to "Accept", accept_path(@order.id) %></button>
+    <button><%= link_to "Cancel", cancel_path(@order.id) %></button>
+    </td>
+  </tr>
+</table>

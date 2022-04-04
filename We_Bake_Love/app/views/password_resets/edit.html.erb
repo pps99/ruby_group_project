@@ -1,0 +1,11 @@
+<h1> Reset your Password</h1>
+
+<%= form_with method: @user, url: password_reset_edit_path(token: params[:token]), local: "true" do |form| %>
+    <div class="input">
+      <%= form.password_field :attr, name: "password", placeholder: "Enter your password" %>
+    </div>
+    <div class="button">
+      <%= form.submit :ResetPassword %>
+    </div>
+
+<% end %>

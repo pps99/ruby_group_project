@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "new_user_login_page.css" %>
+<div class="newform">
+<%= form_for @user do |f| %>
+
+<%= fa_icon "user solid 3x", class:"user_icon" %>
+<h2>Member_Signup</h2>
+
+<div class="space">
+  <%= f.label :name ,:class=>"name_space"%>
+  <%= f.text_field :name %>
+</div>
+ <% @name_message = @user.errors.full_messages_for(:name).first %>
+ <div class="name_error"><%= @name_message %></div>
+
+<div class="space">
+  <%= f.label :email,:class=>"email_space" %>
+  <%= f.text_field :email %>
+</div>
+ <% @email_message = @user.errors.full_messages_for(:email).first %>
+ <div class="email_error"><%= @email_message%></div>
+<div class="space">
+  <%= f.label :password ,:class=>"password_space"%>
+  <%= f.password_field :password %>
+</div>
+ <% @password_message = @user.errors.full_messages_for(:password).first %>
+ <div class="password_error"><%= @password_message%></div>
+<div class="new_user_button">
+  <%= f.submit %>
+</div>
+<% end %>
+</div>

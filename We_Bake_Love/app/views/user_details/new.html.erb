@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "user_detail.css" %>
+
+<div class="newform">
+<%= form_for @user_detail do |f| %>
+
+<%= fa_icon "user solid 3x", class:"user_icon" %>
+<h2>Your Info</h2>
+
+<div class="space">
+  <%= f.label :phone ,:class=>"phone_space"%>
+  <%= f.text_field :phone %>
+</div>
+ <% @phone_message = @user_detail.errors.full_messages_for(:phone).first %>
+ <div class="phone_error"><%= @phone_message %></div>
+
+<div class="space">
+  <%= f.label :address,:class=>"address_space" %>
+  <%= f.text_field :address %>
+</div>
+ <% @address_message = @user_detail.errors.full_messages_for(:address).first %>
+ <div class="address_error"><%= @address_message %></div>
+
+<%= f.hidden_field :user_id, :value => current_user.id %>
+
+<%= f.hidden_field :total, :value => params[:total] %>
+
+<div class="new_user_detail_button">
+  <%= f.submit "Place order" %>
+</div>
+<% end %>
+</div>

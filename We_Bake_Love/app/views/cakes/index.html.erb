@@ -1,0 +1,27 @@
+<h1>Cake List</h1>
+
+<table>
+  <thead>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Operations</th>
+  </thead>
+  <% @cakes.each do |cake| %>
+  <tr>
+    <td>
+    <% if cake.image.attached? %>
+    <%= image_tag cake.image, style: "width: 100px" %>
+    <% end %>
+    </td>
+    <td><%= cake.name %></td>
+    <td><%= cake.description %></td>
+    <td><%= cake.price %></td>
+    <td>  
+    <%= link_to "Edit", edit_cake_path(cake) %>
+    <%= link_to "Delete", cake, method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
+    </td>
+  </tr>
+  <% end %>
+</table>

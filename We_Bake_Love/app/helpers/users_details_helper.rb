@@ -1,0 +1,2 @@
+module UsersDetailsHelper
+end
