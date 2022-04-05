@@ -1,0 +1,16 @@
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/bootsnap-1.11.1/ext/bootsnap
+D:/BIB_Training/Ruby_Training/ruby_install/Ruby26-x64/bin/ruby.exe -I D:/BIB_Training/Ruby_Training/ruby_install/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20220321-16796-1cak29j.rb extconf.rb
+creating Makefile
+
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/bootsnap-1.11.1/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/bootsnap-1.11.1/ext/bootsnap
+make "DESTDIR="
+generating bootsnap-x64-mingw32.def
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/bootsnap-1.11.1/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20220321-16796-9argle/bootsnap

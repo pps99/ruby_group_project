@@ -1,0 +1,18 @@
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
+D:/BIB_Training/Ruby_Training/ruby_install/Ruby26-x64/bin/ruby.exe -I D:/BIB_Training/Ruby_Training/ruby_install/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20220321-16796-1dmdcgz.rb extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
+make "DESTDIR="
+generating cparse-x64-mingw32.def
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20220321-16796-la7nuj/racc

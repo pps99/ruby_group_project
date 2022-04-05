@@ -1,0 +1,14 @@
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.8/ext/nio4r
+D:/BIB_Training/Ruby_Training/ruby_install/Ruby26-x64/bin/ruby.exe -I D:/BIB_Training/Ruby_Training/ruby_install/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20220321-16796-1ivfhmq.rb extconf.rb
+
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: D:/BIB_Training/Ruby_Training/Group_Project/ruby_group_project/Cake_shop/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR=" install
+make: Nothing to be done for 'install'.

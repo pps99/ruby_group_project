@@ -6,11 +6,14 @@ class UserDetailsController < ApplicationController
   end
 
   def index
-    @user_details = UserDetail.all
+    @user_details = UserDetail.where(status: "pending")
+    @user_orderaccepteddetails = UserDetail.where(status: "accepted")
+    @user_ordercancelleddetails = UserDetail.where(status: "cancelled")
   end
 
   def show
     @user_details = UserDetailService.getUserDetailsByID(params[:id])
+    @user_details = @user_details.where(status: "pending")
     @user_detail = UserDetailService.getUserDetailByID(params[:id])
   end
 
@@ -26,7 +29,6 @@ class UserDetailsController < ApplicationController
     Rails.logger.debug(current_user)
     redirect_to user_details_path
   end
-
   def cancel
     @user_detail = UserDetail.find(params[:format])
     @sql = "SET SQL_SAFE_UPDATES = 0;"

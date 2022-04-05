@@ -68,6 +68,8 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  
+
   def logout
     session[:user_id] = nil
     redirect_to root_path

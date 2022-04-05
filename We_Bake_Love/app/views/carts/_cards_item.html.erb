@@ -29,8 +29,10 @@
    <%= link_to "Clear cart", cancel_cart_item_url %>
 </button>
 <button  class="decor_button">
-   <% if( @grand_total == 0) %>
-     <%= link_to "Order Now",root_path%>
+   <% if current_user.nil? %>
+     <%= link_to "Order Now", emptyUser_path%>
+   <% elsif( @grand_total == 0) %>
+     <%= link_to "Order Now", emptyCart_path%>
    <% else %>
      <%= link_to "Order Now", new_user_detail_path(:total => @grand_total) %>
    <%end%>

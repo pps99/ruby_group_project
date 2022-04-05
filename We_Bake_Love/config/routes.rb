@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   root "home_page#index"
   # Home
+  get "emptyCart", to: "carts#emptyCart"
+  get "emptyUser", to: "carts#emptyUser"
   get "home_page", to: "home_page#index"
   get "/search", to: "home_page#search"
   get "/carts", to: "carts_controller#show"

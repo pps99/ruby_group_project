@@ -1,11 +1,3 @@
-  <br>  
-  <br>  
-  <% flash.each do |type, msg| %>
-   <div id="notice">
-    <%= msg %>
-     </div>
-  <% end %>
-
 <%= stylesheet_link_tag "viewer.css" %>
 <div class="container">
   <div class="text-cart">
@@ -52,8 +44,16 @@
     <input type="search" class="form-control me-2"  placeholder="Search" aria-label="Search"  name="query" > 
     <button type="submit" class="btn btn-outline-success">Search</button>
 </form>
-  <h2>Welcome to Cake Cafe.</h2>
+  <h2>Welcome to We_Bake_Love.</h2>
 <hr>
+  
+  <% flash.each do |type, msg| %>
+   <div class="notice">
+    <%= msg %>
+     </div>
+  <% end %>
+
+
 <% @cakes.each do |cake| %>
 
 <div class="card" style="width: 18rem;">
